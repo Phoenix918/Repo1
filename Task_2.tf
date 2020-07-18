@@ -305,7 +305,6 @@ provisioner "remote-exec" {
     inline = [
       "sudo yum install httpd  php git -y",
 	  "sudo service httpd start",
-	  "sudo service httpd enabled",
       "sudo rm -rf /var/www/html",
       "sudo git clone https://github.com/Phoenix918/Repo1.git /var/www/html",
 	  "sudo sed -i 's/old_domain/${aws_cloudfront_distribution.sbc.domain_name}/g' /var/www/html/s2.html" 
